@@ -21,7 +21,7 @@ When dealing with multiple local Flutter packages that depend on each other, it'
 ## Usage
 
 1. Navigate to the root directory containing your local Flutter packages.
-2. Run the script: `python path_to_script.py`
+2. Run the script: `python dependency_updater.py`
 
 ## Warning
 
