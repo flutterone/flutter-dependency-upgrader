@@ -1,31 +1,33 @@
-# Flutter Local Packages Upgrader
+# Flutter Local Packages Processor
 
-This tool automates the process of upgrading the major versions of local Flutter packages, considering their interdependencies.
+This tool provides automation for processing dependencies in local Flutter packages, considering their interdependencies.
 
 ## Description
 
-When dealing with multiple local Flutter packages that depend on each other, it's essential to upgrade them in a specific order to maintain compatibility. This script identifies the right order to upgrade these packages and then performs the upgrade using the `flutter pub upgrade --major-versions` command.
+Flutter projects with multiple local packages can have interdependencies, making it crucial to process them in the right order to maintain compatibility. This script identifies the correct order to process these packages, using either `flutter pub get` or `flutter pub upgrade --major-versions`.
 
 ### Features
 
-- Discovers all local Flutter packages in the current directory and subdirectories.
+- Discovers all local Flutter packages in the current directory and subdirectories, excluding directories that start with a dot (like `.dart_tool`).
 - Determines the interdependencies between the discovered local packages.
-- Upgrades the packages in the correct order, based on their interdependencies.
+- Processes the packages in the correct order based on their interdependencies using either `flutter pub get` or `flutter pub upgrade --major-versions`.
 
 ## Requirements
 
 - Python 3
 - PyYAML: Install using `pip install pyyaml`
-- Flutter SDK: Ensure that `flutter` command is accessible from the terminal.
+- Flutter SDK: Ensure the `flutter` command is accessible from the terminal.
 
 ## Usage
 
 1. Navigate to the root directory containing your local Flutter packages.
-2. Run the script: `python dependency_updater.py`
+2. Run the script with the desired command:
+   - For upgrading: `python packages_processor.py --command upgrade`
+   - For fetching dependencies: `packages_processor.py --command get`
 
 ## Warning
 
-Before running the script, make sure to:
+Before running the script, ensure the following:
 
 - Backup all your `pubspec.yaml` files, as the script will modify them.
 - Check the status of your version control (like git) to ensure you can roll back changes if necessary.
