@@ -23,7 +23,7 @@ Flutter projects with multiple local packages can have interdependencies, making
 1. Navigate to the root directory containing your local Flutter packages.
 2. Run the script with the desired command:
    - For upgrading: `python packages_processor.py --command upgrade`
-   - For fetching dependencies: `packages_processor.py --command get`
+   - For fetching dependencies: `python packages_processor.py --command get`
 
 ## Warning
 
